@@ -1,0 +1,31 @@
+
+    <h1> {{titulo}} {{year}}</h1>
+    <p> {{comentario}} </p>
+    <hr>
+    
+
+    <!-- <div *ngIf="identificado; else noIdentificado">
+        <h3>Estas indentificado en la aplicación</h3>
+        <button (click)= "unSetIdentificado()"> Borrar Identificarse</button>
+    </div> -->
+
+    <!-- en angular cuando utilizas '# ', estas creando una variable dentro de la plantilla -->
+    <!-- <ng-template #noIdentificado>
+        <p>No estás identificado, pula este botón para identificarte</p>
+        <button (click)= "setIdentificado()">Identificarse</button>
+    </ng-template>
+     -->
+    
+
+     <div *ngIf="identificado;then siIdentificado else noIdentificado"></div>
+
+    <!-- en angular cuando utilizas '# ', estas creando una variable dentro de la plantilla -->
+    <ng-template #siIdentificado>
+        <h3>Estas indentificado en la aplicación</h3>
+        <button (click)= "unSetIdentificado()"> Borrar Identificarse</button>
+    </ng-template>
+    
+    <ng-template #noIdentificado>
+        <p>No estás identificado, pula este botón para identificarte</p>
+        <button (click)= "setIdentificado()">Identificarse</button>
+    </ng-template>

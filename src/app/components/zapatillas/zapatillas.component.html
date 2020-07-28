@@ -1,0 +1,58 @@
+<h2> {{titulo}}</h2>
+<h4>Añadir Marca</h4>
+
+<p>
+    <!-- evento blur es para cuando se sale del foco del elemnto sobre el que actua (blur)="onBlur()" -->
+    <input type="text" [(ngModel)]="miMarca" (keyup.enter)="mostrarPalabra()">
+    <button (click)="addMarca()">Añadir</button>
+</p>
+<p>{{miMarca}}</p>
+
+
+
+<p>¿Qué marcastenemos disponibles?</p>
+<ul>
+    <li *ngFor=" let marca of marcas; let indice= index">{{marca}}
+        <button (click)="deleteMarca(indice)">borrar </button>
+    </li>
+
+</ul>
+
+<h3>Zapatillas disponibles</h3>
+<ul>
+    
+    <li *ngFor="let zapas of zapatillas">
+        <span [ngStyle]="{'text-decoration': !zapas.stock ? 'line-through' : 'none'}">
+            Modelo: {{zapas.nombre}} - precio:
+              <!-- utilizamos ng clas en vez de class="fondorrojo, subrayado " 
+             porque asi podemos hacer un objeto json con condicones -->
+             <strong 
+             [class.altoPrecio]="zapas.precio >= 80"
+             [ngClass]="{
+                 'fondoRojo': zapas.precio >= 80 ,
+                  'subrayado': zapas.marca == 'Adidas'
+                }"
+              >
+                 {{zapas.precio}} €
+            </strong>
+        </span>
+        <span *ngIf="zapas.precio < 70"
+         [style.color]="zapas.precio < 60?'red' : 'green'"
+         [class.altoPrecio]="zapas.precio >= 80"         >¡¡¡OFERTA!!!</span>
+    </li>
+</ul>
+<p>EL color de la mayoriade nuestras apatillas es</p>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'yellow'">
+        El color más usado es al <span style="background: yellow;">amarillo</span>
+    </li>
+    <li *ngSwitchCase="'negras'">
+        El color más usado es al <span style="background: black; color: beige;">negro</span>
+    </li>
+    <li *ngSwitchCase="'blancas'">
+        El color más usado es al <span style="background: white;">blanco</span>
+    </li>
+    <li *ngSwitchCase="'azules'">
+        El color más usado es al <span style="background: blue;">rojo</span>
+    </li>
+</ul>

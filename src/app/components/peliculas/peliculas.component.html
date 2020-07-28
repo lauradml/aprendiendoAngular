@@ -1,0 +1,8 @@
+<h2>{{titulo}}</h2>
+<h3 *ngIf="mostrar_retro !=true">La mejor película es {{mejor_peli}}</h3>
+<h3 *ngIf="mostrar_retro " [style.background]="color">La mejor película  retro es {{mejor_peli_retro}}</h3>
+
+<h2>listado de Películas</h2>
+<ul>
+    <li *ngFor= "let peli of pelis"> {{peli}}</li>
+</ul>

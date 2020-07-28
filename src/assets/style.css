@@ -1,0 +1,15 @@
+.altoPrecio{
+    color:rgb(139, 26, 26);
+    font-size: 18px;
+
+}   
+.fondoRojo{
+    background: rgb(55, 176, 180);
+}
+.subrayado{
+    text-decoration: underline;
+}
+.active{
+    border-bottom :2px solid cyan;
+    color: cyan;
+}
