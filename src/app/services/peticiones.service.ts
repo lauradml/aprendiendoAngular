@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
             this.url="https://reqres.in/"
         }
 
-        getUser():Observable<any>{
-            return this._http.get(this.url+'/api/users/2')
+        getUser(userId):Observable<any>{
+            return this._http.get(this.url+'api/users/'+userId)
         }
 
 

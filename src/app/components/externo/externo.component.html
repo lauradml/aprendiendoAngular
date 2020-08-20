@@ -1,1 +1,14 @@
-<p>externo works!</p>
+<p>Petición de usuario con ajax</p>
+<label for="">Introduce número del usuario </label>
+<div *ngIf="!user">
+    <h2>Cargando ... </h2>
+</div>
+
+
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()">
+<div *ngIf="user">
+    <img src="{{user.avatar}}" alt="foto" width="200">
+    <h2>{{ user.first_name + " " + user.last_name}}</h2>
+    
+
+</div>

@@ -9,19 +9,30 @@ import { PeticionesService } from 'src/app/services/peticiones.service';
 })
 export class ExternoComponent implements OnInit {
 
+  public user: any;
+  public userId: any;
+
   constructor(
     private _peticionesService : PeticionesService
-  ) { }
+  ) { 
+    this.userId= 4;
+  }
 
   ngOnInit(): void {
-    this._peticionesService.getUser().subscribe(
+    this.cargarUsuario();
+  }
+
+  cargarUsuario(){
+    this.user= false;
+    this._peticionesService.getUser(this.userId).subscribe(
       result =>{
-        console.log(result);
+        this.user= result.data
       },
       error =>{
         console.log(<any>error);
       }
     );
+
   }
 
 }
