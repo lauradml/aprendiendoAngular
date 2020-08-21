@@ -11,6 +11,8 @@ import { Videojuegos } from './components/videojuegos/videojuegos.component';
 import { Zapatillas } from './components/zapatillas/zapatillas.component';
 import { ExternoComponent } from './components/externo/externo.component'
 
+import { CalculadoraPipe } from './pipes/calculadora.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { ExternoComponent } from './components/externo/externo.component'
     PeliculasComponent,
     Videojuegos,
     Zapatillas,
-    ExternoComponent
+    ExternoComponent,
+    CalculadoraPipe
   ],
   imports: [
     BrowserModule,

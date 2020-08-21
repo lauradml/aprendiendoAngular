@@ -1,4 +1,8 @@
-<p>Petición de usuario con ajax</p>
+<p>{{'Petición de usuario con ajax' | uppercase }}</p>
+<!-- {{fecha | date:'fullDate' }} <hr> -->
+{{fecha | date:'dd/MM/yy' }} <hr>
+<p>Pipe de calculadora {{ 4 | calculadora:2}}</p> <hr>
+
 <label for="">Introduce número del usuario </label>
 <div *ngIf="!user">
     <h2>Cargando ... </h2>
@@ -9,6 +13,4 @@
 <div *ngIf="user">
     <img src="{{user.avatar}}" alt="foto" width="200">
     <h2>{{ user.first_name + " " + user.last_name}}</h2>
-    
-
 </div>
