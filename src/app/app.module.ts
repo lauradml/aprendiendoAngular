@@ -9,9 +9,11 @@ import { MiComponente } from './components/mi-componente/mi-componente.component
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { Videojuegos } from './components/videojuegos/videojuegos.component';
 import { Zapatillas } from './components/zapatillas/zapatillas.component';
-import { ExternoComponent } from './components/externo/externo.component'
+import { ExternoComponent } from './components/externo/externo.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 import { CalculadoraPipe } from './pipes/calculadora.pipe';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CalculadoraPipe } from './pipes/calculadora.pipe';
     Videojuegos,
     Zapatillas,
     ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

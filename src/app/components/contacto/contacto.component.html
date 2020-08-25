@@ -1,0 +1,33 @@
+<h2>Contacto</h2>
+
+<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+    <label for="nombre"> Nombre </label>
+    <!-- en el patternpongo una expresión regular para que solo azmita letras -->
+    <input  type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" 
+    required pattern="[a-zA-Z]+"> 
+    <span *ngIf="nombre.touched && !nombre.valid">
+        *El nombre esobligatorio
+    </span><br>
+
+    <label for="apellidos"> Apellido </label>
+    <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="usuario.apellidos" required>
+    <span *ngIf="apellidos.touched && !apellidos.valid">
+        *Los apellidos esobligatorio
+    </span><br>
+    
+    <label for="email"> Email </label>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required>
+    <span *ngIf="email.touched && !email.valid">
+        *El email esobligatorio
+    </span><br>
+    
+    <label for="email"> Mensaje </label><br>
+    <textarea name="mensaje" cols="30" rows="10" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea>
+    <span *ngIf="email.touched && !email.valid">
+        *El email esobligatorio
+    </span><br>
+    
+    <!-- con [disable] y su condición no dejo  mandar el formulario 
+    a no ser que esen rellenos los campor reuerido -->
+    <input type="submit" value="Enviar" [disabled]="!formContacto.form.valid">
+</form>
